@@ -1,3 +1,5 @@
+// JSON  Data Driven Testing
+
 import{test,expect}from'@playwright/test'
 
 import fs from"fs"
@@ -23,22 +25,32 @@ test.describe("login data driven test",async()=>
     {
         test(`login email and password ${email} ${password}`,async({page})=>
         {
-            await page.goto('https://demowebshop.tricentis.com/login')
+            // Navigate to the page
+            await page.goto('https://demowebshop.tricentis.com/login');
+
+            // Entering the Email
             await page.locator("//input[@name='Email']").fill(email);
+
+            // Entering password
             await page.locator("//input[@name='Password']").fill(password);
+
+            // Clicking on login button
             await page.locator("//input[@value='Log in']").click();
 
-
+            // Write a conditional statement
+            // if it is valid crendentials we should able to see the log out
             if(validaity.toLowerCase()==="valid")
             {
                 const logout= page.locator("//a[text()='Log out']");
                 await expect(logout).toBeVisible();
             }
+            // if it is invalid credentials we should able to see the error message
             else
             {
                 const errormessage=page.locator(".validation-summary-errors")
                 await expect(errormessage).toBeVisible()
 
+                // if it is invalid the url should not change
                 await expect(page).toHaveURL("https://demowebshop.tricentis.com/login")
 
             }
