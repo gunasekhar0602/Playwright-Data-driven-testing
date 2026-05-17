@@ -8,10 +8,6 @@ test("Parameter data testing",async({page})=>
    await expect.soft(page.locator('h2 a').nth(0)).toContainText("laptop",{ignoreCase:true})
 })
 
-
-
-
-
 // create an array and privide the items (test data )that which we need to verify
 const searchitems:string[]=["laptop","Gift card","smartphone","monitor"];
 
