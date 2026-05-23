@@ -2,21 +2,21 @@
     {
         "email":"laura.taylor1234@example.com",
         "password":"test123",
-        "validaity":"valid"
+        "validity":"valid"
     },
     {
         "email":"taylor1234@example.com",
         "password":"test123",
-        "validaity":"invalid"
+        "validity":"invalid"
     },
     {
         "email":"laura.taylor1234@example.com",
         "password":"test11",
-        "validaity":"invalid"
+        "validity":"invalid"
     },
     {
         "email":"",
         "password":"",
-        "validaity":"invalid"
+        "validity":"invalid"
     }
 ]
