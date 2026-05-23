@@ -22,7 +22,7 @@ const loginData:any=JSON.parse(fs.readFileSync(jsonpath,'utf-8'))
 
 test.describe("login data driven test",async()=>
 {
-    for(const{email,password,validaity} of loginData)
+    for(const{email,password,validity} of loginData)
     {
         test(`login email and password ${email} ${password}`,async({page})=>
         {
@@ -40,7 +40,7 @@ test.describe("login data driven test",async()=>
 
             // Write a conditional statement
             // if it is valid crendentials we should able to see the log out
-            if(validaity.toLowerCase()==="valid")
+            if(validity.toLowerCase()==="valid")
             {
                 const logout= page.locator("//a[text()='Log out']");
                 await expect(logout).toBeVisible();
