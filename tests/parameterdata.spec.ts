@@ -8,16 +8,17 @@ test("Parameter data testing",async({page})=>
    await page.goto('https://demowebshop.tricentis.com/');
 
    // locater the search bar and fill the item laptop
-   await page.locator("//input[@id='small-searchterms']").fill("laptop")
+   await page.locator("//input[@id='small-searchterms']").fill("laptop");
 
    // After fill the item locate the seach button and clik on it
    await page.locator("//input[@value='Search']").click();
 
    // assertion for laptop is reflecting OR not after seaching for laptop
-   await expect.soft(page.locator('h2 a').nth(0)).toContainText("laptop",{ignoreCase:true})
+   await expect.soft(page.locator('h2 a').nth(0)).toContainText("laptop",{ignoreCase:true});
 })
 
-// create an array and privide the items (test data) that which we need to verify
+// Passing test data using Array
+// create an array with string datatype and privide the items (test data) that which we need to verify
 const searchitems:string[]=["laptop","Gift card","smartphone","monitor"];
 
 // write a for of loop searchitems so that we can verify each item
@@ -31,12 +32,13 @@ for(const item of searchitems)
     // Navigate to page
     await page.goto('https://demowebshop.tricentis.com/');
 
-    // Locate the text box and fill the item
+    // Enter item : Locates the search bar field and fill it with email 
     await page.locator("//input[@id='small-searchterms']").fill(item);
 
-    // Locate the search and click on it
+    // Click Search: Locates the search button and click on it
     await page.locator("//input[@value='Search']").click();
 
+    // locates the item visbility
     // Assertion whether the item is reflecting or not in the first item place
     await expect.soft(page.locator('h2 a').nth(0)).toContainText(item,{ignoreCase:true});
     await page.waitForTimeout(1000);
