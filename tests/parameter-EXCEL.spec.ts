@@ -15,7 +15,7 @@ import * as XlSX from'xlsx'
 // File
 const excelpath='testdata/data1.xlsx'
 
-// Read and parse the target excel file and load content into work book object
+// Read and parse the target excel file and load content into workbook object
 // To read the excel file we need to use XLSX module
 // workbook
 const workbook=XlSX.readFile(excelpath);
