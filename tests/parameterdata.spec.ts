@@ -43,6 +43,5 @@ for(const item of searchitems)
     await expect.soft(page.locator('h2 a').nth(0)).toContainText(item,{ignoreCase:true});
     await page.waitForTimeout(1000);
 })
-
 }
    
