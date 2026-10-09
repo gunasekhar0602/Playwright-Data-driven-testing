@@ -13,7 +13,6 @@ const jsonpath="testdata/data.json"
 // JSON is predeifned class, inside that we are calling parse method.
 // it will read the data in array formate.
 
-
 // Reading and parsing the JSON Data --------------------------------------------------------------------------------------
 // fs.readFilesync(jsonpath,'utf-8') - Reads JSON file synchronously
 // jsonpath - storing the relative path of JSON file which contains test data
@@ -48,6 +47,7 @@ test.describe("login data driven test",async()=>
             // Click Login: Locates login button and click on login button
             await page.locator("//input[@value='Log in']").click();
 
+          
             // Evaluating Test Outcomes via condition statements ------------------------------------------------------------
             // If it is valid crendentials we should able to see the log out
             if(validity.toLowerCase()==="valid")
